@@ -1,0 +1,14 @@
+parameters:
+pool: ()
+workingDir: ''
+
+steps:
+- script
+   npm install jasmine-node
+        
+      - task: Npm@1
+        inputs:
+          command: 'custom'
+          workingDir: ${{ parameters.workingDir }}
+          customCommand: 'test'
+    
