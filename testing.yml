@@ -1,0 +1,15 @@
+parameters:
+  - name: customCommand
+    type: string
+    default: ''
+
+    
+
+steps:
+- script: 
+    npm install jasmine-node
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(System.DefaultWorkingDirectory)'
+    customCommand: ${{ parameters.customCommand }}
